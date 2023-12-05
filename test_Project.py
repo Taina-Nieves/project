@@ -16,13 +16,15 @@ class TestCategoryGenerator(unittest.TestCase):
                                 "guatemala""argentina", "ecuador", "bolivia", "colombia", "peru"
                                 "panama", "venezuela", "honduras", "belize", "barbados"])
 
-#class TestHangman(unittest.TestCase):
-     
+class TestHangman(unittest.TestCase):
+     def test_displayword(self):
+        game = Hangman()
+        game.word = "hello"
+        game.guessed_letters = {"h", "l"}
+        self.assertEqual(game.display_word(), "h_ll_")
 
 #class TestChallange(unittest.TestCase):
-
-
-
+     
 
 
 if __name__ == "__main__":
