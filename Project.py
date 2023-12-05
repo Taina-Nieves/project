@@ -30,6 +30,9 @@ class CategoryGenerator():
                 
                 word = random.choice(americas_countries)
                 return word
+            else:
+                print("Invalid choice, try again")
+                
         except TypeError:
             print("Invalid category, try again")
 

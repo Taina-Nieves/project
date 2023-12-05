@@ -1,11 +1,19 @@
-# My Test README
+# Hangman Game
 
-This is a test repository, used to introduce myself to Git and Github.
+This is a hangman game using turtle graphics in Python.
 
-## Markdown
+# Features
+- Contains 3 classes. 
+- First class is CategoryGenerator to get the category from the user and randomize word. 
+- Second class asks the user the letters and 
 
-This README file supports Markdown syntax and so I can create
-section headers using the '#' symbol followed by a title, on its own line.
+# Game
+
+- The user first chooses a category to guess a word from, either  USA cities, Continents, or Countries in the Americas.
+- You then have an option to play the regular or challange version.
+- In the regular you guess individual letters to complete the word.
+- In the challange you can guess the letters and word.
+- Using turtle, there is a visual representation of the hangman with incorrect guesses. 
 
 ## Contents
 
@@ -14,4 +22,4 @@ This repository should contain the following folders/files:
 - test_project.py
 
 The `test_Project.py` file contains all the tests.
-The `Project.py` file contains the main python application.
+The `Project.py` file contains the main python application. 
