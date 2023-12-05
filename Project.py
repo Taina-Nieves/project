@@ -13,7 +13,8 @@ class CategoryGenerator():
         try:
             if self.category == "usa cities": 
                 cities = ["newyork", "losangeles", "chicago", "miami" ,
-                          "houston", "dallas", "albany", "orlando", "boston"]
+                          "houston", "dallas", "albany", "orlando", "boston", "colorado",
+                          "stamford", "newark", "tampa", "honolulu", "cambridge", "buffalo"]
                 word = random.choice(cities)
                 return word
         
@@ -24,9 +25,9 @@ class CategoryGenerator():
                 return word
 
             elif self.category == "countries":
-                americas_countries = ["usa", "canada", "mexico", "brazil",
-                                    "argentina", "ecuador", "bolivia", "colombia",
-                                    "panama", "venezuela"]
+                americas_countries = ["usa", "canada", "mexico", "brazil", "guatemala"
+                                    "argentina", "ecuador", "bolivia", "colombia", "peru"
+                                    "panama", "venezuela", "honduras", "belize", "barbados"]
                 
                 word = random.choice(americas_countries)
                 return word
@@ -159,8 +160,8 @@ class Challange(Hangman):
 if __name__ == "__main__":
     while True:
         print("Welcome to Hangman!")
-        print("1. Play Hangman")
-        print("2. Challenge Mode")
+        print("1. Play Hangman: only letters")
+        print("2. Play Hangman: letters and whole word")
         print("3. Quit")
 
         try:
