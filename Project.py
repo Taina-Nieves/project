@@ -1,41 +1,43 @@
 import turtle as t
 import random
 
-
-class CategoryGenerator():
+class CategoryGenerator:
     def __init__(self):
         self.category = None
 
     def getCatWord(self):
-        print("Choose a category to guess a word from!") 
+        print("Choose a category to guess a word from!")
         self.category = input("Enter either USA cities, Continents, or Countries: ").lower()
-        
+
         try:
             if self.category == "usa cities": 
                 cities = ["newyork", "losangeles", "chicago", "miami" ,
-                          "houston", "dallas", "albany", "orlando", "boston", "colorado",
-                          "stamford", "newark", "tampa", "honolulu", "cambridge", "buffalo"]
+                        "houston", "dallas", "albany", "orlando", "boston", "colorado",
+                        "stamford", "newark", "tampa", "honolulu", "cambridge", "buffalo"]
                 word = random.choice(cities)
                 return word
         
             elif self.category == "continents":
                 continents =  ["northamerica", "southamerica", "europe", "asia",
-                               "africa", "australia", "antartica"]
+                            "africa", "australia", "antartica"]
                 word = random.choice(continents)
                 return word
 
             elif self.category == "countries":
-                americas_countries = ["usa", "canada", "mexico", "brazil", "guatemala"
-                                    "argentina", "ecuador", "bolivia", "colombia", "peru"
+                americas_countries = ["usa", "canada", "mexico", "brazil", "guatemala",
+                                    "argentina", "ecuador", "bolivia", "colombia", "peru",
                                     "panama", "venezuela", "honduras", "belize", "barbados"]
-                
                 word = random.choice(americas_countries)
                 return word
             else:
                 print("Invalid choice, try again")
+                return None
                 
         except TypeError:
             print("Invalid category, try again")
+
+
+
 
                
 class Hangman():
@@ -109,18 +111,16 @@ class Hangman():
     
     def is_game_over(self):
         if self.wrong_guesses >= 6:
-            print("You ran out of guesses. The word was: ", self.word)
-            t.clear()
+            print("You ran out of guesses. The word was:", self.word)
             return True
         elif set(self.guessed_letters) == set(self.word):
             print("You guessed the word! It is:", self.word)
-            t.clear()
             return True
         else:
             return False
         
     def play(self):
-        while not self.is_game_over() and self.wrong_guesses < 6:
+        while self.is_game_over() == False:
             letter = input("Enter letter: ")
             self.guess(letter)
             print("Current word:", self.display_word())
@@ -145,7 +145,7 @@ class Challange(Hangman):
             return False
 
     def play(self):
-        while not self.is_game_over() and self.wrong_guesses < 6:
+        while self.is_game_over() == False:
             letter = input("Enter letter: ")
             self.guess(letter)
             print("Current word:", self.display_word())
@@ -173,11 +173,10 @@ if __name__ == "__main__":
                 challenge_game =  Challange()
                 challenge_game.play()
             elif choice == 3:
-                print("Goodbye")
+                print("Ending game")
                 break
             else:
                 print("Invalid choice. Please enter a number between 1 and 3.")
         except ValueError:
             print("Invalid input. Please enter a number.")
 
-    
